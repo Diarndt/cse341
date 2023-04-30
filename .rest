@@ -1,1 +1,24 @@
-GET http://localhost:3000 HTTP/1.1
+//localhost
+###
+GET http://localhost:8080/contacts
+
+###
+GET http://localhost:8080/contacts/644df086f5f503a8fb1c81c5
+
+###
+GET  http://localhost:8080/contacts/644df0bef5f503a8fb1c81c6
+
+###
+GET  http://localhost:8080/contacts/644df0d7f5f503a8fb1c81c7
+
+###
+GET https://cse341-assignment2.onrender.com/contacts
+
+###
+GET https://cse341-assignment2.onrender.com/contacts/644df086f5f503a8fb1c81c5
+
+###
+GET https://cse341-assignment2.onrender.com/contacts/44df0bef5f503a8fb1c81c6
+
+###
+GET https://cse341-assignment2.onrender.com/contacts/644df0d7f5f503a8fb1c81c7

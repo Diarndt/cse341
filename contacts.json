@@ -1,0 +1,25 @@
+{
+    "contact": {
+        "firstName":"Ron", 
+        "lastName":"Arndt Jr", 
+        "email":"rarndtjr@hotmail.com", 
+        "favoriteColor":"Blue", 
+        "birthday":"June"
+    },
+    "contact2": {
+        "firstName":"Cameron",
+        "lastName":"Arndt",
+        "email":"camarndt16@gmail.com",
+        "favoriteColor":"Red",
+        "birthday":"January"
+    },
+    "contact3": {
+        "firstName":"Cori",
+        "lastName":"Arndt",
+        "email":"coarndt12@gmail.com",
+        "favoriteColor":"Green",
+        "birthday":"February"
+    }
+ 
+    
+}
