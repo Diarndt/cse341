@@ -44,5 +44,9 @@ const createNew = async (req, res, next) => {
 //Create a PUT to update a contact
 
 
+
+//Create a DELETE  use deleteOne
+
+
 module.exports = {getAll, getOne, createNew};
 
