@@ -1,12 +1,12 @@
 const express = require('express');
-const bodyParse = require('body-parse');
+const bodyParser = require('body-parser');
 const mondodb = require('./db/connect');
 
 const port = process.env.Port || 8080;
 
 const app = express();
 
-app.use(bodyParse.json);
+app.use(bodyParser.json);
 
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');

@@ -1,29 +1,27 @@
+const mongodb = require('../db/connect');
+const ObjectId = require('mongodb').ObjectId;
 const Contact = require('../routes/contacts'); 
 
-const allContacts = (req, res, next) => {
-  Contact.find({}, (err, contacts) => {
-    if (err) {
-      return next(err);
-    }
-    res.setHeader('Content-Type', 'application/json');
-    res.status(200).json(contacts);
+const getAll = async (req, res, next) => {
+  const result = await mongodb.getDb().db().collection('contacts').find;
+    result.toArray().then((lists) => {
+        res.setHeader('Content-Type', 'application/json');
+        res.status(200).json(lists);
   });
 };
 
-
-const ContactModel = require('../routes/contacts');
-
-const oneContact = (req, res, next) => {
-  const contactId = req.params.id;
-
-  ContactModel.findById(contactId, (err, contact) => {
-    if (err) {
-      return next(err);
-    }
+const getOne = async (req, res, next) => {
+  const contactId = new ObjectId(req.params.id);
+  const result = await mongodb
+  .getDb()
+  .db()
+  .collection('contacts')
+  .find({_id: userId});
+  result.toArray().then((lists) => {
     res.setHeader('Content-Type', 'application/json');
-    res.status(200).json(contacts);
+    res.status(200).json(lists[0]);
   });
 };
 
-module.exports = {allContacts, oneContact};
+module.exports = {getAll, getOne};
 
