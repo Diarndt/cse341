@@ -51,3 +51,13 @@ content-type:application/json
 
 ###
 Delete http://localhost:8080/contacts/6456a90219315e05fa3b25b7 HTTP/1.1
+
+
+###
+POST https://cse341-assignment2.onrender.com
+
+###
+PUT https://cse341-assignment2.onrender.com
+
+###
+DELETE https://cse341-assignment2.onrender.com
