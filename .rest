@@ -22,3 +22,32 @@ GET https://cse341-assignment2.onrender.com/contacts/64559035f2433b651aa113d4
 
 ###
 GET https://cse341-assignment2.onrender.com/contacts/6455904ef2433b651aa113d5
+
+###
+POST http://localhost:8080/contacts HTTP/1.1
+content-type: application/json
+
+{
+    "firstName":"Jasper", 
+    "lastName":"Arndt", 
+    "email":"jazpurr@gmail.com",
+    "favoriteColor":"Black", 
+    "birthday":"August"
+
+    }
+
+###
+PUT http://localhost:8080/contacts/64559035f2433b651aa113d4 HTTP/1.1
+content-type:application/json
+
+{
+    "firstName":"Cam",
+    "lastName":"Arndt",
+    "email":"camarndt16@gmail.com",
+    "favoriteColor":"Blue",
+    "birthday":"June"
+
+    }
+
+###
+Delete http://localhost:8080/contacts/6456a90219315e05fa3b25b7 HTTP/1.1
