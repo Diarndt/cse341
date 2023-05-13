@@ -9,7 +9,7 @@ routes.use(
     '/',
     (docData = (req, res) => {
       let docData = {
-        documentationURL: 'http:localhost:8080/api-doc', //update url
+        documentationURL: 'https://cse341-assignment2.onrender.com/api-docs', //update url
       };
       res.send(docData);
     })
