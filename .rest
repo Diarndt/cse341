@@ -44,13 +44,13 @@ content-type:application/json
     "firstName":"Cam",
     "lastName":"Arndt",
     "email":"camarndt16@gmail.com",
-    "favoriteColor":"Blue",
-    "birthday":"June"
+    "favoriteColor":"Red",
+    "birthday":"January"
 
     }
 
 ###
-Delete http://localhost:8080/contacts/6456a90219315e05fa3b25b7 HTTP/1.1
+Delete http://localhost:8080/contacts/6456b07219315e05fa3b25b8 HTTP/1.1
 
 
 ###
@@ -61,3 +61,8 @@ PUT https://cse341-assignment2.onrender.com
 
 ###
 DELETE https://cse341-assignment2.onrender.com
+
+###
+GET http://localhost:8080/api-docs
+
+
