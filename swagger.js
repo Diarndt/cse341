@@ -5,8 +5,8 @@ const doc = {
     title: 'My API',
     description: 'Description',
   },
-  host: 'https://cse341-assignment2.onrender.com/api-docs', //used published url here
-  schemes: ['http'],
+  host: 'cse341-assignment2.onrender.com/api-docs', //used published url here
+  schemes: ['https'],
 };
 
 const outputFile = './swagger.json';
