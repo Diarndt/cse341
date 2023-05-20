@@ -5,7 +5,7 @@ const doc = {
     title: 'My API',
     description: 'Description',
   },
-  host: 'http://localhost:8080/api-docs', //used published url here
+  host: 'https://cse341-assignment2.onrender.com', //used published url here
   schemes: ['https'],
 };
 
