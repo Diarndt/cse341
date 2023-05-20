@@ -1,7 +1,6 @@
 {
   "name": "cse341",
   "version": "1.0.0",
-  "description": "",
   "main": "app.js",
   "dependencies": {
     "body-parser": "^1.20.2",
@@ -20,5 +19,6 @@
   "license": "ISC",
   "devDependencies": {
     "swagger-autogen": "^2.23.1"
-  }
+  },
+  "description": ""
 }

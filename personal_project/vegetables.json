@@ -1,0 +1,25 @@
+[{ 
+        "plantName":"Pumpkins", 
+        "scientificName":"Cucurbita moschata", 
+        "countryOfOrigin":"Mexico", 
+        "bestEnvironment":"A warm, sunny spot that has fertile, well-drained soil",
+        "bestTimeToPlant":"Early May through June", 
+        "whenToHarvest":"Late September or early October",
+        "commonRecipes":"Pumpkin Pie"
+    },{
+        "plantName":"Snap Peas", 
+        "scientificName":" Pisum sativum 'Macrocarpon Group'", 
+        "countryOfOrigin":"Central Asia or the Middle East",
+        "bestEnvironment":"Cool, damp weather", 
+        "bestTimeToPlant":"Early spring", 
+        "whenToHarvest":"When the pods are green and still tender, and the peas inside are just starting to swell.",
+        "commonRecipes":"Roasted Snap Peas"
+    },{
+        "plantName":"Tomatoes", 
+        "scientificName":"Solanum lycopersicum", 
+        "countryOfOrigin":"Bolivia, Chile, Colombia, Ecuador and Peru",
+        "bestEnvironment":"Well-drained sites that receive full sun for most of the day",
+        "bestTimeToPlant":"Early to mid-May when the danger of frost has past and soil has had a chance to warm.", 
+        "whenToHarvest":"When at least two-thirds of the tomato is fully colored with the remaining one-third showing signs of color but not fully colored.",
+        "commonRecipes":"Salsa"
+    }]

@@ -1,0 +1,21 @@
+//localhost
+###
+GET http://localhost:8080/api-docs
+
+###
+GET http://localhost:8080/vegetables
+
+###
+GET http://localhost:8080/flowers
+
+###
+POST http://localhost:8080/flowers HTTP/1.1
+content-type: application/json
+
+{
+    "plantName": "Daffodil",
+    "scientificName": "Narcissus",
+    "countryOfOrigin": "Spain and Portugal"
+
+}
+

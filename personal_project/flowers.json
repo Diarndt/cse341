@@ -1,0 +1,16 @@
+[ {
+       "plantName":"Sunflower", 
+        "scientificName":"Helianthus", 
+        "countryOfOrigin":"Native to North America"
+        
+    },{
+        "plantName":"Pansy", 
+        "scientificName":"Viola tricolor var. hortensis", 
+        "countryOfOrigin":" Iver, Buckinghamshire, England"
+        
+    },{
+        "plantName":"Rose", 
+        "scientificName":"Rosa rubiginosa", 
+        "countryOfOrigin":"Central Asia"
+        
+    }]
