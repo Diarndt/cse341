@@ -5,7 +5,7 @@ const doc = {
     title: 'My API',
     description: 'Description',
   },
-  host: 'cse341-assignment2.onrender.com', //used published url here
+  host: 'https://cse341-assignment2.onrender.com', //used published url here
   schemes: ['https'],
 };
 
