@@ -1,11 +1,11 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const mongodb = require('./personal_project/db/connect');
+const mongodb = require('./db/connect');
 
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger.json');
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8080;
 
 const app = express();
 
