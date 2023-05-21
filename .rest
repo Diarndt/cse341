@@ -1,21 +1,68 @@
 //localhost
 ###
-GET http://localhost:8080/api-docs
+GET http://localhost:8080/contacts
 
 ###
-GET http://localhost:8080/vegetables
+GET http://localhost:8080/contacts/6455901cf2433b651aa113d3
 
 ###
-GET http://localhost:8080/flowers
+GET  http://localhost:8080/contacts/64559035f2433b651aa113d4
 
 ###
-POST http://localhost:8080/flowers HTTP/1.1
+GET  http://localhost:8080/contacts/6455904ef2433b651aa113d5
+
+###
+GET https://cse341-assignment2.onrender.com/contacts
+
+###
+GET https://cse341-assignment2.onrender.com/contacts/6455901cf2433b651aa113d3
+
+###
+GET https://cse341-assignment2.onrender.com/contacts/64559035f2433b651aa113d4
+
+###
+GET https://cse341-assignment2.onrender.com/contacts/6455904ef2433b651aa113d5
+
+###
+POST http://localhost:8080/contacts HTTP/1.1
 content-type: application/json
 
 {
-    "plantName": "Daffodil",
-    "scientificName": "Narcissus",
-    "countryOfOrigin": "Spain and Portugal"
+    "firstName":"Jasper", 
+    "lastName":"Arndt", 
+    "email":"jazpurr@gmail.com",
+    "favoriteColor":"Black", 
+    "birthday":"August"
 
-}
+    }
+
+###
+PUT http://localhost:8080/contacts/64559035f2433b651aa113d4 HTTP/1.1
+content-type:application/json
+
+{
+    "firstName":"Cam",
+    "lastName":"Arndt",
+    "email":"camarndt16@gmail.com",
+    "favoriteColor":"Red",
+    "birthday":"January"
+
+    }
+
+###
+Delete http://localhost:8080/contacts/6456b07219315e05fa3b25b8 HTTP/1.1
+
+
+###
+POST https://cse341-assignment2.onrender.com
+
+###
+PUT https://cse341-assignment2.onrender.com
+
+###
+DELETE https://cse341-assignment2.onrender.com
+
+###
+GET http://localhost:8080/api-docs
+
 

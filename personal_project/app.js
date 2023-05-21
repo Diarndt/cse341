@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const mongodb = require('./db/connect');
 
 const swaggerUi = require('swagger-ui-express');
-const swaggerDocument = require('../swagger.json');
+const swaggerDocument = require('./swagger.json');
 
 const port = process.env.PORT || 8080;
 
@@ -19,7 +19,7 @@ app
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
     next();
 }) 
-    .use('/', require('./routes'));
+    .use('/', require('../routes'));
 
 mongodb.initDb((err, mongodb) => {
     if(err) {

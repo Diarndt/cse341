@@ -5,7 +5,7 @@
     "description": "Description",
     "version": "1.0.0"
   },
-  "host": "cse341-assignment2.onrender.com",
+  "host": "https://cse341-assignment2.onrender.com",
   "basePath": "/",
   "schemes": [
     "https"
@@ -18,7 +18,7 @@
         "responses": {}
       }
     },
-    "/contacts/": {
+    "/gardens/": {
       "get": {
         "description": "",
         "produces": [
@@ -40,19 +40,13 @@
             "schema": {
               "type": "object",
               "properties": {
-                "firstName": {
+                "plantName": {
                   "example": "any"
                 },
-                "lastName": {
+                "scientificName": {
                   "example": "any"
                 },
-                "email": {
-                  "example": "any"
-                },
-                "favoriteColor": {
-                  "example": "any"
-                },
-                "birthday": {
+                "countryOfOrigin": {
                   "example": "any"
                 }
               }
@@ -66,7 +60,7 @@
         }
       }
     },
-    "/contacts/{id}": {
+    "/gardens/{id}": {
       "get": {
         "description": "",
         "produces": [
@@ -101,19 +95,13 @@
             "schema": {
               "type": "object",
               "properties": {
-                "firstName": {
+                "plantName": {
                   "example": "any"
                 },
-                "lastName": {
+                "scientificName": {
                   "example": "any"
                 },
-                "email": {
-                  "example": "any"
-                },
-                "favoriteColor": {
-                  "example": "any"
-                },
-                "birthday": {
+                "countryOfOrigin": {
                   "example": "any"
                 }
               }

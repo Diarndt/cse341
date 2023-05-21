@@ -3,7 +3,8 @@ const routes = express.Router();
 
 routes.use('/', require('./swagger'));
 
-routes.use('/contacts', require('./contacts.js'))
+routes.use('/gardens', require('./vegetables.js'))
+routes.use('/gardens', require('./flowers.js'))
 
 routes.use(
     '/',
