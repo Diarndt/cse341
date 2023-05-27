@@ -2,24 +2,34 @@ const mongodb = require('../db/connect');
 const ObjectId = require('mongodb').ObjectId;
 // const Contact = require('../routes/contacts'); 
 
-const getAll = async (req, res, next) => {
-  const result = await mongodb.getDb().db('gardens').collection('flowers').find();
-    result.toArray().then((lists) => {
-        res.setHeader('Content-Type', 'application/json');
-        res.status(200).json(lists);
+const getAll = (req, res) => {
+  mongodb
+  .getDb()
+  .db('gardens')
+  .collection('flowers')
+  .find()
+  .toArray((err, list) => {
+     if (err) {
+      res.status(400).json({ message: err });
+    }
+      res.setHeader('Content-Type', 'application/json');
+      res.status(200).json(list);
   });
 };
 
 const getOne = async (req, res, next) => {
   const flowerId = new ObjectId(req.params.id);
-  const result = await mongodb
+  mongodb
   .getDb()
   .db('gardens')
   .collection('flowers')
-  .find({_id:flowerId});
-  result.toArray().then((lists) => {
+  .find({_id:flowerId})
+  .toArray((err, result) => {
+     if (err) {
+      res.status(400).json({ message: err });
+    }
     res.setHeader('Content-Type', 'application/json');
-    res.status(200).json(lists[0]);
+    res.status(200).json(result[0]);on(lists[0]);
   });
 };
 
@@ -30,9 +40,12 @@ const createFlower = async (req, res) => {
     scientificName: req.body.scientificName, 
     countryOfOrigin: req.body.countryOfOrigin
   };
-
   const result = await mongodb.getDb().db('gardens').collection('flowers').insertOne(flower);
-  res.status(201).json();
+  if(response.acknowledge) {
+     res.status(201).json();
+   } else {
+    res.status(500).json(response.error || 'An error occurred while creating this vegetable.');
+  }
 };
 
 //Create a PUT to update a contact
@@ -58,8 +71,13 @@ const deleteFlower = async (req, res) => {
   const response = await mongodb.getDb().db('gardens').collection('flowers').deleteOne({ _id: flowerId }, true);
   console.log(response);
   
+   if(response.deleteVegetable > 0) {
     res.status(200).send();
+  } else {
+    res.status(500).json(response.error || 'Error occurred while deleting.'); //best practice to log the 500 error to a file and not display
+  }
 
 };
+  
 
 module.exports = {getAll, getOne, createFlower, updateFlower, deleteFlower};
