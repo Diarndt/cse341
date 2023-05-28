@@ -18,9 +18,9 @@ const getAll = (req, res) => {
 };
 
 const getOne = async (req, res, next) => {
-  // if (!ObjectId.isValid(require.param.id)) {
-  //   res.status(400).json('Must have a valid flowers id to find a flower');
-  // }
+  if (!ObjectId.isValid(req.params.id)) {
+    res.status(400).json('Must have a valid flowers id to find a flower');
+  }
   const flowerId = new ObjectId(req.params.id);
   mongodb
   .getDb()
@@ -53,7 +53,7 @@ const createFlower = async (req, res) => {
 
 //Create a PUT to update a contact
 const updateFlower = async (req, res) => {
-  if (!ObjectId.isValid(require.param.id)) {
+  if (!ObjectId.isValid(req.params.id)) {
     res.status(400).json('Must have a valid flowers id to find a flower');
   }
     const flowerId = new ObjectId(req.params.id);
@@ -73,7 +73,7 @@ const updateFlower = async (req, res) => {
 
 //Create a DELETE  use deleteOne
 const deleteFlower = async (req, res) => {
-  if (!ObjectId.isValid(require.param.id)) {
+  if (!ObjectId.isValid(req.params.id)) {
     res.status(400).json('Must have a valid flowers id to delete a flower');
   }
   const flowerId = new ObjectId(req.params.id);

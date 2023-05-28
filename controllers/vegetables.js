@@ -18,7 +18,7 @@ const getAll = (req, res) => {
 };
 
 const getOne = (req, res) => {
-  if (!ObjectId.isValid(require.param.id)) {
+  if (!ObjectId.isValid(req.params.id)) {
     res.status(400).json('Must have a valid vegetable id to find a vegetable');
   }
   const vegetableId = new ObjectId(req.params.id);
@@ -57,7 +57,7 @@ const createVegetable = async (req, res) => {
 
 //Create a PUT to update a contact
 const updateVegetable = async (req, res) => {
-  if (!ObjectId.isValid(require.param.id)) {
+  if (!ObjectId.isValid(req.params.id)) {
     res.status(400).json('Must have a valid vegetable id to find a vegetable');
   }
     const vegetableId = new ObjectId(req.params.id);
@@ -81,7 +81,7 @@ const updateVegetable = async (req, res) => {
 
 //Create a DELETE  use deleteOne
 const deleteVegetable = async (req, res) => {
-  if (!ObjectId.isValid(require.param.id)) {
+  if (!ObjectId.isValid(req.params.id)) {
     res.status(400).json('Must have a valid vegetable id to delete a vegetable');
   }
   const vegetableId = new ObjectId(req.params.id);
