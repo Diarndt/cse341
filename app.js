@@ -1,11 +1,11 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongodb = require('./db/connect');
-const { validateVeggie } = require('./validation');
+// const { validateVeggie } = require('./validation');
 
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger.json');
-// const { createVegetable } = require('./controllers/vegetables');
+
 
 const port = process.env.PORT || 8080;
 

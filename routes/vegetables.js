@@ -1,16 +1,14 @@
 const express = require('express');
 const router = express.Router();
 const vegetablesController = require('../controllers/vegetables');
-// const { vegetableSchema } = require('../helper/validation_schema');
-// const vegeValidation = require('../helper/validation_schema');
-const validation = require('../middleware/validator')
+const validation = require('../middleware/validate');
 
 router.get('/', vegetablesController.getAll);
 router.get('/:id', vegetablesController.getOne);
 
 //Use post to create a new contact
-router.post('/', vegetablesController.createVegetable);
-router.put('/:id', vegetablesController.updateVegetable);
+router.post('/', validation.saveVeggie, vegetablesController.createVegetable);
+router.put('/:id', validation.saveVeggie, vegetablesController.updateVegetable);
 router.delete('/:id', vegetablesController.deleteVegetable);
 
 module.exports = router;

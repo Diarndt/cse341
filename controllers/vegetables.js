@@ -82,7 +82,7 @@ const updateVegetable = async (req, res) => {
 //Create a DELETE  use deleteOne
 const deleteVegetable = async (req, res) => {
   if (!ObjectId.isValid(require.param.id)) {
-    res.status(400).json('Must have a valid vegetable id to find a vegetable');
+    res.status(400).json('Must have a valid vegetable id to delete a vegetable');
   }
   const vegetableId = new ObjectId(req.params.id);
   const response = await mongodb.getDb().db('').collection('gardens').deleteOne({ _id: vegetableId }, true);
