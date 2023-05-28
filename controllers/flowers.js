@@ -18,6 +18,9 @@ const getAll = (req, res) => {
 };
 
 const getOne = async (req, res, next) => {
+  if (!ObjectId.isValid(require.param.id)) {
+    res.status(400).json('Must have a valid flowers id to find a flower');
+  }
   const flowerId = new ObjectId(req.params.id);
   mongodb
   .getDb()
@@ -50,6 +53,9 @@ const createFlower = async (req, res) => {
 
 //Create a PUT to update a contact
 const updateFlower = async (req, res) => {
+  if (!ObjectId.isValid(require.param.id)) {
+    res.status(400).json('Must have a valid flowers id to find a flower');
+  }
     const flowerId = new ObjectId(req.params.id);
     const flower = {
       plantName: req.body.plantName, 
@@ -67,6 +73,9 @@ const updateFlower = async (req, res) => {
 
 //Create a DELETE  use deleteOne
 const deleteFlower = async (req, res) => {
+  if (!ObjectId.isValid(require.param.id)) {
+    res.status(400).json('Must have a valid flowers id to delete a flower');
+  }
   const flowerId = new ObjectId(req.params.id);
   const response = await mongodb.getDb().db('gardens').collection('flowers').deleteOne({ _id: flowerId }, true);
   console.log(response);

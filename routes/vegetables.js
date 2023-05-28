@@ -8,7 +8,7 @@ router.get('/:id', vegetablesController.getOne);
 
 //Use post to create a new contact
 router.post('/', validation.saveVeggie, vegetablesController.createVegetable);
-router.put('/:id', validation.saveVeggie, vegetablesController.updateVegetable);
+router.put('/:id', vegetablesController.updateVegetable);
 router.delete('/:id', vegetablesController.deleteVegetable);
 
 module.exports = router;
