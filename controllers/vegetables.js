@@ -38,35 +38,21 @@ const getOne = (req, res) => {
 
 //Create POST for a new contact
 const createVegetable = async (req, res) => {
-  const vegetable = { plantName, scientificName, countryOfOrigin, bestEnvironment, bestTimeToPlant, whenToHarvest, commonRecipes
-    // plantName: req.body.plantName, 
-    // scientificName: req.body.scientificName, 
-    // countryOfOrigin: req.body.countryOfOrigin, 
-    // bestEnvironment: req.body.bestEnvironment,
-    // bestTimeToPlant: req.body.bestTimeToPlant, 
-    // whenToHarvest: req.body.whenToHarvest,
-    // commonRecipes: req.body.commonRecipes
-  } = req.body;
-  const newVegetable = new vegetable({plantName, scientificName, countryOfOrigin, bestEnvironment, bestTimeToPlant, whenToHarvest, commonRecipes});
-    try {
-      await newVegetable.save();
-      return res.status(201).json({
-        success: true,
-        message: "Addition successful",
-        data: newVegetable
-    });
-    } catch (error) {
-      return res.status(412).send({
-        success: false,
-        message: error.message
-    })
+  const vegetable = {
+    plantName: req.body.plantName, 
+    scientificName: req.body.scientificName, 
+    countryOfOrigin: req.body.countryOfOrigin, 
+    bestEnvironment: req.body.bestEnvironment,
+    bestTimeToPlant: req.body.bestTimeToPlant, 
+    whenToHarvest: req.body.whenToHarvest,
+    commonRecipes: req.body.commonRecipes
+  }; 
   const response = await mongodb.getDb().db('gardens').collection('vegetables').insertOne(vegetable);
   if(response.acknowledge) {
     res.status(201).json(response);
   } else {
     res.status(500).json(response.error || 'An error occurred while creating this vegetable.');
   }
-}
 };
 
 //Create a PUT to update a contact
