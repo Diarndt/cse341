@@ -18,9 +18,9 @@ const getAll = (req, res) => {
 };
 
 const getOne = async (req, res, next) => {
-  if (!ObjectId.isValid(require.param.id)) {
-    res.status(400).json('Must have a valid flowers id to find a flower');
-  }
+  // if (!ObjectId.isValid(require.param.id)) {
+  //   res.status(400).json('Must have a valid flowers id to find a flower');
+  // }
   const flowerId = new ObjectId(req.params.id);
   mongodb
   .getDb()
