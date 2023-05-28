@@ -9,7 +9,7 @@ router.get('/', vegetablesController.getAll);
 router.get('/:id', vegetablesController.getOne);
 
 //Use post to create a new contact
-router.post('/', validation.saveVeggie, vegetablesController.createVegetable);
+router.post('/', vegetablesController.createVegetable);
 router.put('/:id', vegetablesController.updateVegetable);
 router.delete('/:id', vegetablesController.deleteVegetable);
 
