@@ -18,9 +18,9 @@ const Flower = require('../routes/flowers');
 const getOne = async (req, res, next) => {
   const flowerId = new ObjectId(req.params.id);
 
-  if (!ObjectId.isValid(req.params.id)) {
-    res.status(400).json('Must have a valid flowers id to find a flower');
-  }
+  // if (!ObjectId.isValid(req.params.id)) {
+  //   res.status(400).json('Must have a valid flowers id to find a flower');
+  // }
    //added try/catch block
    try {
   mongodb
@@ -29,8 +29,8 @@ const getOne = async (req, res, next) => {
   .collection('flowers')
   .find({_id:flowerId})
   .toArray((err, result) => {
-    if (err) {
-      throw err; // Throw the error to be caught in the catch block
+    if (!ObjectId.isValid(req.params.id)) {
+      res.status(400).json('Must have a valid flowers id to find a flower');
     }
     res.setHeader('Content-Type', 'application/json');
     res.status(200).json(result[0]);on(lists[0]);

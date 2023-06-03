@@ -18,9 +18,9 @@ const Vegetable = require('../routes/vegetables');
 const getOne = (req, res) => {
   const vegetableId = new ObjectId(req.params.id);
 
-  if (!ObjectId.isValid(req.params.id)) {
-    res.status(400).json('Must have a valid vegetable id to find a vegetable');
-  }
+  // if (!ObjectId.isValid(req.params.id)) {
+  //   res.status(400).json('Must have a valid vegetable id to find a vegetable');
+  // }
   //added try/catch block
   try {
   mongodb
@@ -29,8 +29,8 @@ const getOne = (req, res) => {
   .collection('vegetables')
   .find({_id:vegetableId})
   .toArray((err, result) => {
-    if (err) {
-      throw err; // Throw the error to be caught in the catch block
+    if (!ObjectId.isValid(req.params.id)) {
+      res.status(400).json('Must have a valid vegetable id to find a vegetable');
     }
     res.setHeader('Content-Type', 'application/json');
     res.status(200).json(result[0]);
