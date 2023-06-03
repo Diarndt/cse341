@@ -21,18 +21,8 @@
     "/vegetables/": {
       "get": {
         "description": "",
-        "produces": [
-          "application/json"
-        ],
         "parameters": [],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "400": {
-            "description": "Bad Request"
-          }
-        }
+        "responses": {}
       },
       "post": {
         "description": "",
@@ -182,18 +172,8 @@
     "/flowers/": {
       "get": {
         "description": "",
-        "produces": [
-          "application/json"
-        ],
         "parameters": [],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "400": {
-            "description": "Bad Request"
-          }
-        }
+        "responses": {}
       },
       "post": {
         "description": "",
