@@ -3,7 +3,7 @@ const router = express.Router();
 const flowersController = require('../controllers/flowers');
 const validation = require('../middleware/validate');
 
-router.get('/', flowersController.getAll);
+//router.get('/', flowersController.getAll);
 router.get('/:id', flowersController.getOne);
 
 //Use post to create a new contact
