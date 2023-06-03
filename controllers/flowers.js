@@ -23,24 +23,16 @@ const getOne = (req, res, next) => {
       res.status(400).json('Must have a valid flowers id to find a flower');
       return;
       }
-
     mongodb
-      .getDb()
-      .db('gardens')
-      .collection('flowers')
-      .findOne({_id:flowerId}, (err, result) => {
-        if (err) {
-          throw err; // Throw the error to be caught in the catch block
-        }
-
-        if (!result) {
-          res.status(404).json('Vegetable not found');
-          return;
-        }
-
-        res.setHeader('Content-Type', 'application/json');
-        res.status(200).json(result[0]);on(lists[0]);
-      });
+    .getDb()
+    .db('gardens')
+    .collection('flowers')
+   .find({_id:flowerId})
+  .toArray((err, result) => {
+    res.setHeader('Content-Type', 'application/json');
+    res.status(200).json(result[0]);on(lists[0]);
+     
+     });
     } catch (err) {
         res.status(400).json({ message: err });
       }
