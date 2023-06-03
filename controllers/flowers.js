@@ -9,13 +9,8 @@ const getAll = (req, res) => {
   .collection('flowers')
   .find()
   .toArray((err, list) => {
-    //added try/catch block
-    try {
       res.setHeader('Content-Type', 'application/json');
       res.status(200).json(list);
-    } catch (err) {
-        res.status(400).json({ message: err });
-      }
   });
 };
 
