@@ -17,29 +17,35 @@ const Vegetable = require('../routes/vegetables');
 
 const getOne = (req, res) => {
   const vegetableId = new ObjectId(req.params.id);
-
-  // if (!ObjectId.isValid(req.params.id)) {
-  //   res.status(400).json('Must have a valid vegetable id to find a vegetable');
-  // }
-  //added try/catch block
+//add try/catch block
   try {
-  mongodb
-  .getDb()
-  .db('gardens')
-  .collection('vegetables')
-  .find({_id:vegetableId})
-  .toArray((err, result) => {
-    res.setHeader('Content-Type', 'application/json');
-    res.status(200).json(result[0]);
-      if (!ObjectId.isValid(req.params.id)) {
+    if (!ObjectId.isValid(req.params.id)) {
       res.status(400).json('Must have a valid vegetable id to find a vegetable');
-      }
-    
-     });
-    } catch (err) {
-        res.status(400).json({ message: err });
-      }
+      return;
+    }
+
+    mongodb
+      .getDb()
+      .db('gardens')
+      .collection('vegetables')
+      .findOne({ _id: vegetableId }, (err, result) => {
+        if (err) {
+          throw err; // Throw the error to be caught in the catch block
+        }
+
+        if (!result) {
+          res.status(404).json('Vegetable not found');
+          return;
+        }
+
+        res.setHeader('Content-Type', 'application/json');
+        res.status(200).json(result);
+      });
+  } catch (err) {
+    res.status(400).json({ message: err });
+  }
 };
+
 
 //Create POST for a new contact
 const createVegetable = async (req, res) => {
