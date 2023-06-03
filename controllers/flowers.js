@@ -100,4 +100,4 @@ const deleteFlower = async (req, res) => {
 };
   
 
-module.exports = {getAll, getOne, createFlower, updateFlower, deleteFlower};
+module.exports = {getOne, createFlower, updateFlower, deleteFlower};

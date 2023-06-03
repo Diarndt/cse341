@@ -107,6 +107,6 @@ const deleteVegetable = async (req, res) => {
 
 };
 
-module.exports = {getAll, getOne, createVegetable, updateVegetable, deleteVegetable};
+module.exports = {getOne, createVegetable, updateVegetable, deleteVegetable};
 
 //add if else statements after each console.log
