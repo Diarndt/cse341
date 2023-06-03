@@ -6,7 +6,47 @@ GET http://localhost:8080/api-docs
 GET http://localhost:8080/vegetables
 
 ###
-GET http://localhost8080:/flowers
+GET http://localhost:8080/vegetables/6468564ce71060536e18cabf
+
+###
+POST http://localhost:8080/vegetables HTTP/1.1
+content-type: application/json
+
+{
+    "plantName": "Snap Peas",
+    "scientificName": " Pisum sativum 'Macrocarpon Group'",
+    "countryOfOrigin": "Central Asia or the Middle East",
+    "bestEnvironment": "Cool, damp weather",
+    "bestTimeToPlant": "Early spring",
+    "whenToHarvest": "When the pods are green and still tender, and the peas inside are just…",
+    "commonRecipes":"Roasted Snap Peas"
+
+}
+
+###
+PUT http://localhost:8080/vegetables6468564ce71060536e18cabf
+content-type: application/json
+
+{
+    "plantName": "Snap Peas",
+    "scientificName": " Pisum sativum 'Macrocarpon Group'",
+    "countryOfOrigin": "Central Asia or the Middle East",
+    "bestEnvironment": "Cool, damp weather",
+    "bestTimeToPlant": "Early spring",
+    "whenToHarvest": "When the pods are green and still tender, and the peas inside are just…",
+    "commonRecipes":"Roasted Snap Peas"
+
+}
+
+###
+DELETE http://localhost:8080/vegetables6468564ce71060536e18cabf
+
+
+###
+GET http://localhost:8080/flowers
+
+###
+GET http://localhost:8080/flowers/64685657e71060536e18cac3
 
 ###
 POST http://localhost:8080/flowers HTTP/1.1
@@ -19,3 +59,92 @@ content-type: application/json
 
 }
 
+###
+PUT http://localhost:8080/flowers/64685657e71060536e18cac3 HTTP/1.1
+content-type: application/json
+
+{
+    "plantName": "Daffodil",
+    "scientificName": "Narcissus",
+    "countryOfOrigin": "Spain and Portugal"
+
+}
+
+###
+DELETE http://localhost:8080/flowers/64685657e71060536e18cac3
+
+
+
+
+//Production Deploy
+###
+GET https://cse341-assignment2.onrender.com/vegetables
+
+###
+GET https://cse-341-assignment2.onrender.com/vegetables/6468564ce71060536e18cabf
+
+###
+POST https://cse-341-assignment2.onrender.com/vegetables
+content-type: application/json
+
+{
+    "plantName": "Snap Peas",
+    "scientificName": " Pisum sativum 'Macrocarpon Group'",
+    "countryOfOrigin": "Central Asia or the Middle East",
+    "bestEnvironment": "Cool, damp weather",
+    "bestTimeToPlant": "Early spring",
+    "whenToHarvest": "When the pods are green and still tender, and the peas inside are just…",
+    "commonRecipes":"Roasted Snap Peas"
+
+}
+
+###
+PUT https://cse-341-assignment2.onrender.com/vegetables/6468564ce71060536e18cabf
+content-type: application/json
+
+{
+    "plantName": "Snap Peas",
+    "scientificName": " Pisum sativum 'Macrocarpon Group'",
+    "countryOfOrigin": "Central Asia or the Middle East",
+    "bestEnvironment": "Cool, damp weather",
+    "bestTimeToPlant": "Early spring",
+    "whenToHarvest": "When the pods are green and still tender, and the peas inside are just…",
+    "commonRecipes":"Roasted Snap Peas"
+
+}
+
+###
+DELETE https://cse-341-assignment2.onrender.com/vegetables/6468564ce71060536e18cabf
+
+
+
+###
+GET https://cse-341-assignment2.onrender.com/flowers
+
+###
+GET https://cse-341-assignment2.onrender.com/flowers/64685657e71060536e18cac3
+
+###
+POST https://cse-341-assignment2.onrender.com/flowers
+content-type: application/json
+
+{
+    "plantName": "Daffodil",
+    "scientificName": "Narcissus",
+    "countryOfOrigin": "Spain and Portugal"
+
+}
+
+###
+PUT https://cse-341-assignment2.onrender.com/flowers/64685657e71060536e18cac3
+content-type: application/json
+
+{
+    "plantName": "Daffodil",
+    "scientificName": "Narcissus",
+    "countryOfOrigin": "Spain and Portugal"
+
+}
+
+###
+DELETE https://cse-341-assignment2.onrender.com/flowers/64685657e71060536e18cac3
