@@ -18,66 +18,6 @@
         "responses": {}
       }
     },
-    "/vegetables/": {
-      "get": {
-        "description": "",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "post": {
-        "description": "",
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "plantName": {
-                  "example": "any"
-                },
-                "scientificName": {
-                  "example": "any"
-                },
-                "countryOfOrigin": {
-                  "example": "any"
-                },
-                "bestEnvironment": {
-                  "example": "any"
-                },
-                "bestTimeToPlant": {
-                  "example": "any"
-                },
-                "whenToHarvest": {
-                  "example": "any"
-                },
-                "commonRecipes": {
-                  "example": "any"
-                }
-              }
-            }
-          }
-        ],
-        "responses": {
-          "201": {
-            "description": "Created"
-          },
-          "412": {
-            "description": "Precondition Failed"
-          },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        }
-      }
-    },
     "/vegetables/{id}": {
       "get": {
         "description": "",
@@ -176,19 +116,7 @@
         }
       }
     },
-    "/flowers/": {
-      "get": {
-        "description": "",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
+    "/vegetables/": {
       "post": {
         "description": "",
         "parameters": [
@@ -205,6 +133,18 @@
                   "example": "any"
                 },
                 "countryOfOrigin": {
+                  "example": "any"
+                },
+                "bestEnvironment": {
+                  "example": "any"
+                },
+                "bestTimeToPlant": {
+                  "example": "any"
+                },
+                "whenToHarvest": {
+                  "example": "any"
+                },
+                "commonRecipes": {
                   "example": "any"
                 }
               }
@@ -303,6 +243,42 @@
           },
           "400": {
             "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/flowers/": {
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "plantName": {
+                  "example": "any"
+                },
+                "scientificName": {
+                  "example": "any"
+                },
+                "countryOfOrigin": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "412": {
+            "description": "Precondition Failed"
           },
           "500": {
             "description": "Internal Server Error"

@@ -21,20 +21,23 @@ const getOne = async (req, res, next) => {
   if (!ObjectId.isValid(req.params.id)) {
     res.status(400).json('Must have a valid flowers id to find a flower');
   }
+   //added try/catch block
+   try {
   mongodb
   .getDb()
   .db('gardens')
   .collection('flowers')
   .find({_id:flowerId})
   .toArray((err, result) => {
-    //added try/catch block
-    try {
+    if (err) {
+      throw err; // Throw the error to be caught in the catch block
+    }
     res.setHeader('Content-Type', 'application/json');
     res.status(200).json(result[0]);on(lists[0]);
+  });
     } catch (err) {
         res.status(400).json({ message: err });
       }
-  });
 };
 
 //Create POST for a new contact
