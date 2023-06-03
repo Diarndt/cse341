@@ -2,25 +2,25 @@ const mongodb = require('../db/connect');
 const ObjectId = require('mongodb').ObjectId;
 // const Contact = require('../routes/contacts'); 
 
-const getAll = (req, res) => {
-  mongodb
-  .getDb()
-  .db('gardens')
-  .collection('flowers')
-  .find()
-  .toArray((err, list) => {
-      res.setHeader('Content-Type', 'application/json');
-      res.status(200).json(list);
-  });
-};
+// const getAll = (req, res) => {
+//   mongodb
+//   .getDb()
+//   .db('gardens')
+//   .collection('flowers')
+//   .find()
+//   .toArray((err, list) => {
+//       res.setHeader('Content-Type', 'application/json');
+//       res.status(200).json(list);
+//   });
+// };
 
 const getOne = async (req, res, next) => {
   const flowerId = new ObjectId(req.params.id);
 
-  if (!ObjectId.isValid(req.params.id)) {
-    res.status(400).json('Must have a valid flowers id to find a flower');
-    return;
-  }
+  // if (!ObjectId.isValid(req.params.id)) {
+  //   res.status(400).json('Must have a valid flowers id to find a flower');
+  //   return;
+  // }
   mongodb
   .getDb()
   .db('gardens')

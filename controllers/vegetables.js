@@ -2,24 +2,24 @@ const mongodb = require('../db/connect');
 const ObjectId = require('mongodb').ObjectId;
 // const Contact = require('../routes/contacts'); 
 
-const getAll = (req, res) => {
-  mongodb
-  .getDb()
-  .db('gardens')
-  .collection('vegetables')
-  .find()
-  .toArray((err, list) => {
-      res.setHeader('Content-Type', 'application/json');
-      res.status(200).json(list);
-  });
-};
+// const getAll = (req, res) => {
+//   mongodb
+//   .getDb()
+//   .db('gardens')
+//   .collection('vegetables')
+//   .find()
+//   .toArray((err, list) => {
+//       res.setHeader('Content-Type', 'application/json');
+//       res.status(200).json(list);
+//   });
+// };
 
 const getOne = (req, res) => {
   const vegetableId = new ObjectId(req.params.id);
-  if (!ObjectId.isValid(req.params.id)) {
-    res.status(400).json('Must have a valid vegetable id to find a vegetable');
-    return;
-  }
+  // if (!ObjectId.isValid(req.params.id)) {
+  //   res.status(400).json('Must have a valid vegetable id to find a vegetable');
+  //   return;
+  // }
   mongodb
   .getDb()
   .db('gardens')
