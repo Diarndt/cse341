@@ -29,12 +29,13 @@ const getOne = async (req, res, next) => {
   .collection('flowers')
   .find({_id:flowerId})
   .toArray((err, result) => {
-    if (!ObjectId.isValid(req.params.id)) {
-      res.status(400).json('Must have a valid flowers id to find a flower');
-    }
     res.setHeader('Content-Type', 'application/json');
     res.status(200).json(result[0]);on(lists[0]);
-  });
+      if (!ObjectId.isValid(req.params.id)) {
+      res.status(400).json('Must have a valid flowers id to find a flower');
+      }
+    
+     });
     } catch (err) {
         res.status(400).json({ message: err });
       }
