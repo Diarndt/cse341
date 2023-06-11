@@ -1,15 +1,38 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongodb = require('./db/connect');
+const cookieParser = require('cookie-parser');
 // const { validateVeggie } = require('./validation');
+const { auth } = require('express-openid-connect');
+require('dotenv').config()
 
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger.json');
 
 
-const port = process.env.PORT || 8080;
+const port = process.env.PORT;
 
-const app = express();
+const config = {
+    authRequired: false,
+    auth0Logout: true,
+    secret: process.env.SECRET,
+    baseURL: process.env.BASEURL,
+    clientID: process.env.CLIENTID,
+    issuerBaseURL: process.env.ISSUER,
+  };
+
+ const app = express();
+
+// //middleware for login/logout
+app.use(auth(config));
+
+// app.get('/checkLoginStatus', (req, res) => {
+//     res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');
+//   });
+
+
+//middleware for cookies
+app.use(cookieParser());
 
 app
     .use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))

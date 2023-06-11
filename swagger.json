@@ -5,12 +5,23 @@
     "description": "Description",
     "version": "1.0.0"
   },
-  "host": "cse341-assignment2.onrender.com",
+  "host": "localhost:8080",
   "basePath": "/",
   "schemes": [
     "https"
   ],
   "paths": {
+    "/checkLoginStatus": {
+      "get": {
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api-docs": {
       "get": {
         "description": "",

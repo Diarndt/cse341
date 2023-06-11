@@ -15,17 +15,16 @@ const Vegetable = require('../routes/vegetables');
 //   });
 // };
 
-const getOne = (req, res) => {
+const getOne = async (req, res) => {
+  if (!ObjectId.isValid(req.params.id)) {
+    res.status(400).json('Must have a valid vegetable id to find a vegetable');
+    return;
+    }
   const vegetableId = new ObjectId(req.params.id);
 
-  // if (!ObjectId.isValid(req.params.id)) {
-  //   res.status(400).json('Must have a valid vegetable id to find a vegetable');
-  // }
   //added try/catch block
   try {
-    if (!ObjectId.isValid(req.params.id)) {
-      res.status(400).json('Must have a valid vegetable id to find a vegetable');
-      }
+   
   mongodb
   .getDb()
   .db('gardens')
