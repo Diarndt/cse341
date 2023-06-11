@@ -13,20 +13,20 @@ const config = {
 };
 
 const express = require('express');
-const routes = express.Router();
+const router = express.Router();
 
 // auth router attaches /login, /logout, and /callback routes to the baseURL
-routes.use(auth(config));
+router.use(auth(config));
 
 // req.isAuthenticated is provided from the auth router
-routes.get('/', (req, res) => {
+router.get('/', (req, res) => {
   res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');
 });
 
-routes.use('/', require('./swagger'));
+router.use('/', require('./swagger'));
 
-routes.use('/vegetables', require('./vegetables.js'))
-routes.use('/flowers', require('./flowers.js'))
+router.use('/vegetables', require('./vegetables.js'))
+router.use('/flowers', require('./flowers.js'))
 
 // routes.use(
 //     '/',
@@ -39,4 +39,4 @@ routes.use('/flowers', require('./flowers.js'))
 //   );
   
 
- module.exports = routes;
+ module.exports = router;
