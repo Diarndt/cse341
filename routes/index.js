@@ -15,8 +15,6 @@ const config = {
 const express = require('express');
 const routes = express.Router();
 
-routes.use('/', require('./swagger'));
-
 // auth router attaches /login, /logout, and /callback routes to the baseURL
 routes.use(auth(config));
 
@@ -25,19 +23,20 @@ routes.get('/', (req, res) => {
   res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');
 });
 
+routes.use('/', require('./swagger'));
 
 routes.use('/vegetables', require('./vegetables.js'))
 routes.use('/flowers', require('./flowers.js'))
 
-routes.use(
-    '/',
-    (docData = (req, res) => {
-      let docData = {
-        documentationURL: 'cse341-personal-project-ju8e.onrender.com', //'localhost:8080', update url
-      };
-      res.send(docData);
-    })
-  );
+// routes.use(
+//     '/',
+//     (docData = (req, res) => {
+//       let docData = {
+//         documentationURL:  'localhost:8080',//'cse341-personal-project-ju8e.onrender.com', //'localhost:8080', update url
+//       };
+//       res.send(docData);
+//     })
+//   );
   
 
  module.exports = routes;
