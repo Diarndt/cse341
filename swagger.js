@@ -5,7 +5,7 @@ const doc = {
     title: 'My API',
     description: 'Description',
   },
-  host:  'localhost:8080',//'cse341-assignment2.onrender.com', //used published url here or localhost no https needed 'localhost:8080',
+  host:  'cse341-assignment2.onrender.com', //used published url here or localhost no https needed 'localhost:8080',
   schemes: ['https'], //use either http or https
 };
 
