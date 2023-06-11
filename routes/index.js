@@ -19,7 +19,7 @@ const router = express.Router();
 router.use(auth(config));
 
 // req.isAuthenticated is provided from the auth router
-router.get('/', (req, res) => {
+router.get('/checkLoginStatus', (req, res) => {
   res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');
 });
 
@@ -28,15 +28,5 @@ router.use('/', require('./swagger'));
 router.use('/vegetables', require('./vegetables.js'))
 router.use('/flowers', require('./flowers.js'))
 
-// routes.use(
-//     '/',
-//     (docData = (req, res) => {
-//       let docData = {
-//         documentationURL:  'localhost:8080',//'cse341-personal-project-ju8e.onrender.com', //'localhost:8080', update url
-//       };
-//       res.send(docData);
-//     })
-//   );
-  
 
- module.exports = router;
+module.exports = router;
