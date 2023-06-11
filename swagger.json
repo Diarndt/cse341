@@ -11,7 +11,7 @@
     "https"
   ],
   "paths": {
-    "/": {
+    "/checkLoginStatus": {
       "get": {
         "description": "",
         "parameters": [],
