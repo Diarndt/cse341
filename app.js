@@ -14,44 +14,23 @@ const port = process.env.PORT;
 
 const app = express();
 
-const config = {
-    authRequired: false,
-    auth0Logout: true,
-    secret: process.env.SECRET,
-    baseURL: process.env.BASE_URL,
-    clientID: process.env.CLIENT_ID,
-    issuerBaseURL: process.env.ISSUER
-  };
-  
-  // auth router attaches /login, /logout, and /callback routes to the baseURL
-  app.use(auth(config));
-  
-  // req.isAuthenticated is provided from the auth router
-  app.get('/', (req, res) => {
-    res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');
-  });
-
-// // from auth0.com
 // const config = {
 //     authRequired: false,
 //     auth0Logout: true,
 //     secret: process.env.SECRET,
-//     baseURL: process.env.BASEURL,
-//     clientID: process.env.CLIENTID,
-//     issuerBaseURL: process.env.ISSUER,
+//     baseURL: process.env.BASE_URL,
+//     clientID: process.env.CLIENT_ID,
+//     issuerBaseURL: process.env.ISSUER
 //   };
-
-// // login/logout
-// app.use(auth(config));
-
-// //req.isAuthenticated
-// app.get('/checkLoginStatus', (req, res) => {
+  
+//   // auth router attaches /login, /logout, and /callback routes to the baseURL
+//   app.use(auth(config));
+  
+//   // req.isAuthenticated is provided from the auth router
+//   app.get('/', (req, res) => {
 //     res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');
 //   });
 
-
-//middleware for cookies
-//app.use(cookieParser());
 
 app
     .use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
