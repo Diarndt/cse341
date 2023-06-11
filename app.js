@@ -1,9 +1,10 @@
+const { auth } = require('express-openid-connect');
+require('dotenv').config()
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongodb = require('./db/connect');
 //const cookieParser = require('cookie-parser');
-const { auth } = require('express-openid-connect');
-require('dotenv').config()
+
 
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger.json');
@@ -11,6 +12,9 @@ const swaggerDocument = require('./swagger.json');
 
 const port = process.env.PORT;
 
+const app = express();
+
+// from auth0.com
 const config = {
     authRequired: false,
     auth0Logout: true,
@@ -20,11 +24,10 @@ const config = {
     issuerBaseURL: process.env.ISSUER,
   };
 
- const app = express();
-
-//middleware for login/logout
+// login/logout
 app.use(auth(config));
 
+//req.isAuthenticated
 app.get('/checkLoginStatus', (req, res) => {
     res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');
   });
