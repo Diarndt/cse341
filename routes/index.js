@@ -35,7 +35,7 @@ routes.use(
     '/',
     (docData = (req, res) => {
       let docData = {
-        documentationURL:  'cse341-assignment2.onrender.com' //'localhost:8080', update url
+        documentationURL: 'localhost:8080' //'cse341-assignment2.onrender.com' //'localhost:8080', update url
       };
       res.send(docData);
     })
