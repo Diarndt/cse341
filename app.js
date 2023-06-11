@@ -2,7 +2,6 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongodb = require('./db/connect');
 const cookieParser = require('cookie-parser');
-// const { validateVeggie } = require('./validation');
 const { auth } = require('express-openid-connect');
 require('dotenv').config()
 
