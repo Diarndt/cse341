@@ -1,11 +1,8 @@
-const express = require('express');
-const routes = express.Router();
 const { auth } = require('express-openid-connect');
-require('dotenv').config();
-//const cookieParser = require('cookie-parser');
+const dotenv = require('dotenv');
+dotenv.config();
 
-routes.use('/', require('./swagger'));
-
+//from auth0.com
 const config = {
   authRequired: false,
   auth0Logout: true,
@@ -14,6 +11,11 @@ const config = {
   clientID: process.env.CLIENT_ID,
   issuerBaseURL: process.env.ISSUER
 };
+
+const express = require('express');
+const routes = express.Router();
+
+routes.use('/', require('./swagger'));
 
 // auth router attaches /login, /logout, and /callback routes to the baseURL
 routes.use(auth(config));

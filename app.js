@@ -1,10 +1,6 @@
-const { auth } = require('express-openid-connect');
-require('dotenv').config()
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongodb = require('./db/connect');
-//const cookieParser = require('cookie-parser');
-
 
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger.json');
