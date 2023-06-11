@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongodb = require('./db/connect');
-const cookieParser = require('cookie-parser');
+//const cookieParser = require('cookie-parser');
 const { auth } = require('express-openid-connect');
 require('dotenv').config()
 
@@ -25,13 +25,13 @@ const config = {
 //middleware for login/logout
 app.use(auth(config));
 
-// app.get('/checkLoginStatus', (req, res) => {
-//     res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');
-//   });
+app.get('/checkLoginStatus', (req, res) => {
+    res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');
+  });
 
 
 //middleware for cookies
-app.use(cookieParser());
+//app.use(cookieParser());
 
 app
     .use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
