@@ -3,7 +3,7 @@ const swaggerAutogen = require('swagger-autogen')();
 const doc = {
   info: {
     title: 'My API',
-    description: 'Description',
+    description: 'A collection of gardens',
   },
   host: 'cse341-personal-project-ju8e.onrender.com', //used published url here or localhost no https needed 'localhost:8080',
   schemes: ['https'], //use either http or https

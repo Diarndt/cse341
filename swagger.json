@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "title": "My API",
-    "description": "Description",
+    "description": "A collection of gardens",
     "version": "1.0.0"
   },
   "host": "cse341-personal-project-ju8e.onrender.com",
