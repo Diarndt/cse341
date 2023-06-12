@@ -1,7 +1,7 @@
-const express = require('express');
 const { auth } = require('express-openid-connect');
 require('dotenv').config();
 
+const express = require('express');
 const router = express.Router();
 
 //from auth0.com
@@ -24,8 +24,8 @@ router.get('/checkLoginStatus', (req, res) => {
 
 router.use('/', require('./swagger'));
 
-router.use('/vegetables', require('./vegetables.js'))
-router.use('/flowers', require('./flowers.js'))
+router.use('/vegetables', require('./vegetables.js'));
+router.use('/flowers', require('./flowers.js'));
 
 
 module.exports = router;
